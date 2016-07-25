@@ -1,3 +1,19 @@
+/* import local font-family */
+@font-face {
+  font-family: BrushScriptStd;
+  src: url('Brush Script Std.ttf'),
+       url('Brush Script Std.eot'); /* IE9+ */
+}
+@font-face {
+  font-family: Chiller;
+  src: url('Chiller.ttf'),
+       url('Chiller.eot'); /* IE9+ */
+}
+@font-face {
+  font-family: ChaparralProLight;
+  src: url('Chaparral Pro Light.ttf'),
+       url('Chaparral Pro Light.eot'); /* IE9+ */
+}
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -97,6 +113,12 @@ header h2 {
 
 #container .inner img {
   max-width: 100%;
+}
+
+#container .inner footer {
+  font-size: 15px;
+  font-family: BrushScriptStd, Chiller, ChaparralProLight, 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif;
+  text-align: right;
 }
 
 #downloads {
