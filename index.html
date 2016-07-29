@@ -12,17 +12,13 @@
     <![endif]-->
     <title>MS blog -- by StanLee</title>
     <!-- font-awesome -->
-    <!--
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-  -->
     <!-- jquery-ui css -->
     <!--
     <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.min.css">
     -->
     <!-- bootstrap css -->
-    <!--
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    -->
     <!-- custom css -->
     <!--
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -35,7 +31,13 @@
 
         <header>
           <h1>Monkingstand.GitHub.io</h1>
-          <h2>blog of MS</h2>
+          <h2>
+            blog of MS
+            <!-- about warning text，to be deleted -->
+            <button class="pull-right btn btn-default btn-sm" style="border-radius:15px;" data-toggle="tooltip" title="blog page is being builded<br>coming soon" disabled="true">
+                View Blog&nbsp;&nbsp;<i class="fa fa-sign-in"></i>
+            </button>
+          </h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -57,18 +59,20 @@
         </footer>
 
         <!-- jquery -->
-        <!--
         <script type="text/javascript" src="jquery/2.1/jquery.js"></script>
-        -->
         <!-- jquery-ui js -->
         <!--
         <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
         -->
         <!-- bootstrap js -->
-        <!--
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        -->   
       </div>
     </div>
+
+    <!-- about warning text(tooltip)，to be deleted -->
+    <script type="text/javascript">
+        var options = { 'html': true };
+        $('[data-toggle="tooltip"]').tooltip(options);
+    </script>
   </body>
 </html>
