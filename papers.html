@@ -28,9 +28,6 @@
     <body>
         <div style="height:200px;width:500px;margin:50px auto;background-color:#e0e0e0;border-radius:25px;">
             blog content test page！
-            <br>
-            <span>测试的json内容：</span>
-            <span id="test"></span>
         </div>
 
         <!-- jquery -->
@@ -44,11 +41,9 @@
 
         <!-- import content test -->
         <script type="text/javascript">
-            var serverURL = 'https://monkingstand.github.io/';
             $(document).ready(function(){
-                $.getJSON(serverURL + 'papers/category.json', function(data) {
-                    console.info('123');
-                    console.info(data);
+                $.getJSON('papers/category.json', function(data) {
+                    alert('this page is' + data.test);
                 })
             })
         </script>
