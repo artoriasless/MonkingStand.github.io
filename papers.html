@@ -47,9 +47,8 @@
             var serverURL = 'https://monkingstand.github.io/';
             $(document).ready(function(){
                 $.getJSON(serverURL + 'papers/category.json', function(data) {
-                    var category = data;
-                    console.info(category);
-                    $('#test').text(category.test);
+                    console.info('123');
+                    console.info(data);
                 })
             })
         </script>

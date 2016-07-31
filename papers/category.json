@@ -1,9 +1,9 @@
 {
-	'test'    : 'just for test',
-	'category': [
+	"test"    : "just for test",
+	"category": [
 		{
-			'title': 'content01 for test',
-			'path' : '': 'papers/content/content01.json'
+			"title": "content01 for test",
+			"path" : "papers/content/content01.json"
 		}
 	]
 }
