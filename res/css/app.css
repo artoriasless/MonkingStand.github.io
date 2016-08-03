@@ -46,9 +46,15 @@ body {
 }
 
 .nav-header {
-	height: 50px;
-	line-height: 50px;
 	width: 150px;
+	height: 50px;
+	line-height: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.nav-header #logoImg {
+	height: 30px;
 }
 
 .nav-body .nav {
