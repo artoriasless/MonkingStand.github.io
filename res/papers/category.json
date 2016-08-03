@@ -1,9 +1,30 @@
 {
-	"test"    : "just for test",
+	"tags"    : {
+		"html&css"  : [],
+		"javascript": [],
+		"jquery"    : [
+			"0"
+		],
+		"bootstrap" : [
+			"1"
+		]
+	},
 	"category": [
 		{
-			"title": "content01 for test",
-			"path" : "papers/content/content01.json"
+			"index" : "0",
+			"title" : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
+			"path"  : "papers/content/content01.json",
+			"date"  : "2016-01-09",
+			"tag"   : "jquery",
+			"others": ""
+		},
+		{
+			"index" : "1",
+			"title" : "【bootstrap】中，tooltip在触发元素remove后的小bug",
+			"path"  : "papers/content/content02.json",
+			"date"  : "2016-01-15",
+			"tag"   : "bootstrap",
+			"others": "tooltip"
 		}
 	]
 }

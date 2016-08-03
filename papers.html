@@ -3,10 +3,6 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="res/css/stylesheet.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="res/css/github-dark.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="res/css/print.css" media="print">
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -20,14 +16,44 @@
         <!-- bootstrap css -->
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <!-- custom css -->
-        <!--
+        <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="res/css/stylesheet.css" media="screen">
+
+        <link rel="stylesheet" type="text/css" href="res/css/common.css">
         <link rel="stylesheet" type="text/css" href="res/css/app.css">
-        -->
     </head>
 
     <body>
-        <div style="height:200px;width:500px;margin:50px auto;background-color:#e0e0e0;border-radius:25px;">
-            blog content test page！
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="nav-header pull-left">
+                    <a class="nav-brand">MS blog</a>
+                </div>
+                <div class="nav-body">
+                    <ul class="nav nav-list pull-left">
+                        <li>
+                            <a>blog</a>
+                        </li>
+                        <li>
+                            <a>about</a>
+                        </li>
+                        <li>
+                            <a>contact</a>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li>
+                            <a>MS blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="body-container">
+            <div class="body-content">
+                test
+            </div>
         </div>
 
         <!-- jquery -->
@@ -39,15 +65,9 @@
         <!-- bootstrap js -->
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
+        <!-- sys js -->
+        <script type="text/javascript" src="res/js/app.js"></script>
         <!-- main js -->
         <script type="text/javascript" src="res/js/main.js"></script>
-        <!-- import content test -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $.getJSON('res/papers/category.json', function(data) {
-                    alert('this page is ' + data.test);
-                })
-            })
-        </script>
     </body>
 </html>

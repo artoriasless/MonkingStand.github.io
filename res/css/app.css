@@ -1,1 +1,89 @@
 /* custom css */
+body {
+	background: url(../../res/img/papers-bg.jpg) no-repeat;
+	
+	background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+
+	background-attachment: fixed;
+	-o-background-attachment: fixed;
+	-ms-background-attachment: fixed;
+	-moz-background-attachment: fixed;
+	-webkit-background-attachment: fixed;
+}
+
+.nav-container *,
+.nav-container *:hover {
+	color: #888888;
+	text-decoration: none;
+}
+.nav-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+
+	height: 50px;
+	border: 1px solid transparent;
+	border-width: 0 0 1px;
+	border-color: #e7e7e7;
+	border-radius: 0;
+
+	background-color: #ffffff;
+}
+
+.nav-content {
+	width: 1170px;
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nav-header {
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+}
+
+.nav-body .nav {
+	height: 50px;
+}
+.nav-body .nav > li {
+	float: left;
+
+	height: 50px;
+	padding: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+
+	text-align: center;
+}
+.nav-body .nav > li a {
+	height: 30px;
+	line-height: 30px;
+	padding: 0;
+	margin: 0;
+}
+.nav-body .nav > li a:hover {
+	background-color: transparent;
+}
+
+.body-container {
+	width: 100%;
+	padding-top: 5px;
+	margin-top: 50px;
+}
+
+.body-content {
+	width: 1170px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
