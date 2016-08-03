@@ -16,7 +16,10 @@ body {
 }
 
 .nav-container *,
-.nav-container *:hover {
+.nav-container *:hover,
+.nav-container *:link,
+.nav-container *:visited,
+.nav-container *:active {
 	color: #888888;
 	text-decoration: none;
 }
