@@ -78,10 +78,32 @@ body {
 	line-height: 30px;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 	cursor: pointer;
 }
 .nav-body .nav > li a:hover {
 	background-color: transparent;
+}
+.nav-body .nav > li a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+.nav-body .nav > li a span:before {
+	content: attr(data-hover);
+	position: absolute;
+	top: 100%;
+	color: #111111;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.nav-body .nav > li a span:hover {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 
 #blogLink {
@@ -112,15 +134,10 @@ body {
 	margin-left: auto;
 }
 
-#contactModal .modal-dialog {
-	margin: 150px auto;
-}
-#contactModal .modal-body {
-	text-align: center;
-}
-#contactModal .modal-body a:hover {
-	text-decoration: none;
-}
+#aboutModal .modal-dialog, #contactModal .modal-dialog { margin: 150px auto; }
+#aboutModal .modal-header, #contactModal .modal-header { text-align: center; }
+#aboutModal .modal-body, #contactModal .modal-body { text-align: center; }
+#aboutModal .modal-body a:hover, #contactModal .modal-body a:hover { text-decoration: none; }
 #contactModal i.fa-github { color: #111111; }
 #contactModal i.fa-envelope { color: #0067ba; }
 #contactModal i.fa-weibo { color: #e6162d; }
