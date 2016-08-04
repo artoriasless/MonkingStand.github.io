@@ -135,11 +135,32 @@ body {
 }
 
 #aboutModal .modal-dialog, #contactModal .modal-dialog { margin: 150px auto; }
-#aboutModal .modal-header, #contactModal .modal-header { text-align: center; }
-#aboutModal .modal-body, #contactModal .modal-body { text-align: center; }
+#aboutModal .modal-header, #contactModal .modal-header, #contactModal .modal-body { text-align: center; }
 #aboutModal .modal-body a:hover, #contactModal .modal-body a:hover { text-decoration: none; }
+
 #contactModal i.fa-github { color: #111111; }
 #contactModal i.fa-envelope { color: #0067ba; }
 #contactModal i.fa-weibo { color: #e6162d; }
 #contactModal i.fa-weixin { color: #95e75c; }
 #contactModal i.fa-qq { color: #24202b; }
+
+#aboutModal .modal-body dt {
+	position: relative;
+	font-weight: 600;
+}
+#aboutModal .modal-body dt:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	margin-left: -10px; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #888888;
+}
+#aboutModal .modal-body dd {
+	margin-left: 25px;
+	font-size: 0.75em;
+}
