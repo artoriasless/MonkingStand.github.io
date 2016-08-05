@@ -109,8 +109,6 @@ var papers = {
             </div>
         </div>
 		*/
-		hideContent('#paperContent')
-
 		if (indexStr == '-1') {
 			$('#paperContent .paper-title h1').empty().text('Directory');
 			$('#paperContent .paper-content').empty().addClass('no-item');
@@ -150,7 +148,8 @@ var papers = {
 							'<div class="item-abstract"><p>' + tempObj.abstract +'</p></div>' +
 						'</div>';
 		}
-
+		
+		hideContent('#paperContent')
 		$('#paperContent .paper-title h1').empty().text('Directory');
 		$('#paperContent .paper-content').removeClass('no-item').empty().append(categoryStr);
 		showContent('#paperContent');
