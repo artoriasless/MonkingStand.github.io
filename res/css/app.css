@@ -65,7 +65,6 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	cursor: pointer;
 }
 .nav-body .nav > li a:hover { background-color: transparent; }
 .nav-body .nav > li a span {

@@ -26,3 +26,9 @@ $('#showTime').on('mouseover', function() {
 .on('mouseout', function() {
 	console.log('hide time!');
 })
+
+$('#blogLink').on('click', function() {
+	if (!$('#bodyContainer').hasClass('init')) {
+		papers.initCategory(category);
+	}
+})

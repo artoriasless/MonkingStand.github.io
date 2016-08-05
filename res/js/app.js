@@ -11,10 +11,8 @@ var papers = {
 		    papers.initTimeline(timeline);
 		    papers.initCategory(category);
 
-		    setTimeout(function(){
-		    	$('#loading').addClass('hidden');
-		    	$('#bodyContainer').removeClass('hidden').addClass('init fade-in-animate');
-		    }, 1000)
+		    $('#bodyContainer').addClass('init');
+		    showContent('#bodyContainer');
 	    })
 	},
 
@@ -63,9 +61,9 @@ var papers = {
         var timelineStr = '';
 
         for (key in timeline) {
-        	var indexArr = timeline[key].length ? timeline[key].join() : '-1';
+        	var indexStr = timeline[key].length ? timeline[key].join() : '-1';
         	timelineStr +=	'<dd>' +
-        						'<a onclick="papers.renderCategory(\'' + indexArr + '\')">' +
+        						'<a onclick="papers.renderCategory(\'' + indexStr + '\')">' +
         							'<span class="time-val">' + key + '</span>(<span class="count">' + timeline[key].length + '</span>)' +
         						'</a>' +
         					'</dd>';
@@ -76,22 +74,123 @@ var papers = {
 
 	initCategory: function(category) {
 		/* 初始化目录，显示全部的文章标题 */
-		//TODO
-		console.info('TODO，初始状态显示全部的文章title');
-		console.info('采用分页！')
+		var indexStr  = '',
+			descIndex = category.length - 1;
+
+		for (; descIndex >= 1; descIndex --) {
+			indexStr += category[descIndex].index + ',';
+		}
+		indexStr += '0';
+
+		papers.renderCategory(indexStr);
 	},
 
 	renderCategory: function(indexStr) {
 		/* 根据标签、时间轴，渲染显示对应类别下的文章目录 */
-		//TODO
-		console.info('renderCategory' + indexStr);
+		/*
+		<div class="category-item">
+            <div class="item-title">
+                <h2><a>标题</a></h2>
+            </div>
+            <div class="item-subtitle">
+                <h3>
+                    <span class="subtitle-date">
+                        <i class="fa fa-calendar"></i>
+                        <span class="date-val">2016-01-01</span>
+                    </span>
+                    <span class="subtitle-tags">
+                        <i class="fa fa-tag"></i>
+                        <span class="tags-val">jquery</span>
+                    </span>
+                </h3>
+            </div>
+            <div class="item-abstract">
+                <p>简介</p>
+            </div>
+        </div>
+		*/
+		hideContent('#paperContent')
+
+		if (indexStr == '-1') {
+			$('#paperContent .paper-title h1').empty().text('Directory');
+			$('#paperContent .paper-content').empty().addClass('no-item');
+			showContent('#paperContent');
+			return ;
+		}
+
+		var indexArr   = indexStr.split(','),
+			descIndex  = indexArr.length - 1,
+			categoryStr = '';
+
+		if (category.length == (descIndex + 1)) {
+			$('#bodyContainer').addClass('init');
+		}
+		else {
+			$('#bodyContainer').removeClass('init');
+		}
+
+		for (; descIndex >= 0; descIndex --) {
+			var tempObj = category[indexArr[descIndex]],
+				tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
+
+			categoryStr +=	'<div class="category-item">' +
+							'<div class="item-title">' +
+								'<h2><a onclick="papers.renderPaper(\'' + tempObj.index + '\')" title="' + tempObj.title + '" data-hover="' + tempObj.title + '">' + tempObj.title + '</a></h2>' +
+							'</div>' +
+							'<div class="item-subtitle">' +
+								'<h3>' +
+									'<span class="subtitle-date">' + 
+										'<i class="fa fa-calendar"></i>&nbsp;<span class="date-val">' + tempObj.date + '</span>' + 
+									'</span>' +
+									'<span class="subtitle-tags">' + 
+										'<i class="fa fa-tag"></i>&nbsp;<span class="tags-val">' + tags + '</span>' + 
+									'</span>' +
+								'</h3>' +
+							'</div>' +
+							'<div class="item-abstract"><p>' + tempObj.abstract +'</p></div>' +
+						'</div>';
+		}
+
+		$('#paperContent .paper-title h1').empty().text('Directory');
+		$('#paperContent .paper-content').removeClass('no-item').empty().append(categoryStr);
+		showContent('#paperContent');
 	},
 
 	renderPaper: function(index) {
 		/* 根据指定的文章索引，渲染对应的文章内容 */
+		/*
+		<strong>小标题</strong>
+        <p>文本内容</p>
+        <div class="img-container size-lg">
+            <img src="图片">
+        </div>
+		*/
+		hideContent('#paperContent');
+
+		var tempObj = category[index],
+			tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
+		$('#bodyContainer').removeClass('init');
+		$('#paperContent .paper-title h1').empty().text(tempObj.title);
+		$('#paperContent .paper-subtitle .date-val').text(tempObj.date);
+		$('#paperContent .paper-subtitle .tags-val').text(tags);
+		$('#paperContent .paper-content').empty().append('<p>正文内容！</p>');
+
+		showContent('#paperContent');
 		//TODO
-		console.info('renderPaper' + index);
+		console.info('采用分页！')
 	}
+}
+
+function hideContent(selector) {
+	$(selector).addClass('hidden');
+	$('#loading').removeClass('hidden');
+}
+
+function showContent(selector) {
+	setTimeout(function(){
+    	$('#loading').addClass('hidden');
+    	$(selector).removeClass('hidden').addClass('fade-in-animate');
+    }, 1000)
 }
 
 /* export */

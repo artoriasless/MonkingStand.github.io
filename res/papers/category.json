@@ -16,20 +16,22 @@
 	},
 	"category": [
 		{
-			"index" : "0",
-			"title" : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
-			"path"  : "papers/content/content01.json",
-			"date"  : "2016-01-09",
-			"tag"   : "jquery",
-			"others": ""
+			"index"   : "0",
+			"title"   : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
+			"path"    : "papers/content/content01.json",
+			"date"    : "2016-01-09",
+			"tag"     : "jquery",
+			"others"  : "",
+			"abstract": "jquery中，使用animate、slide、fade等动画，如果多次触发（click、hover等），由于其执行是一个持续的过程，如果不采取一定的措施，会导致滞后多次执行的bug。"
 		},
 		{
-			"index" : "1",
-			"title" : "【bootstrap】中，tooltip在触发元素remove后的小bug",
-			"path"  : "papers/content/content02.json",
-			"date"  : "2016-01-15",
-			"tag"   : "bootstrap",
-			"others": "tooltip"
+			"index"   : "1",
+			"title"   : "【bootstrap】中，tooltip在触发元素remove后的小bug",
+			"path"    : "papers/content/content02.json",
+			"date"    : "2016-01-15",
+			"tag"     : "bootstrap",
+			"others"  : "tooltip",
+			"abstract": "bootstrap中的tooltip，当遇到以下情形时：将触发tooltip的a标签进行remove后，其对应的tooltip会一直显示在页面上，导致出现bug。"
 		}
 	]
 }
