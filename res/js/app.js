@@ -172,7 +172,16 @@ var papers = {
 		$('#paperContent .paper-title h1').empty().text(tempObj.title);
 		$('#paperContent .paper-subtitle .date-val').text(tempObj.date);
 		$('#paperContent .paper-subtitle .tags-val').text(tags);
-		$('#paperContent .paper-content').empty().append('<p>正文内容！</p>');
+		var test =	'<div class="code-container">' +
+						'<code>' + 
+							'<xmp data-line="1"><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong></xmp>' + 
+							'<xmp data-line="12" class="indent-1"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="51" class="indent-2"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="1" class="indent-3"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="12"><div><span>asdasd</span></div></xmp>' + 
+						'</code>' +
+					'</div>';
+		$('#paperContent .paper-content').empty().append(test);
 
 		showContent('#paperContent');
 		//TODO

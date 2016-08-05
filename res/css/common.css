@@ -1,4 +1,10 @@
 /* common css for all */
+/* import Consolas font */
+@font-face {
+	font-family: consola;
+	src: url(../fonts/Consolas/consola.ttf);
+}
+
 *, *:hover, *:link, *:visited, *:active,
 a, a:hover, a:link, a:visited, a:active {
 	color: #707070;
@@ -12,7 +18,9 @@ a { cursor: pointer; }
 	position: absolute;
 	display: block;
 	width: 100%;
+	min-width: 1170px;
 	height: 100%;
+	min-height: 600px;
 	background: rgba(255, 255, 255, 0.85);
 	z-index: 1;
 }
@@ -213,6 +221,39 @@ i.fa-qq       { color: #24202b; }
 .paper-content .size-sm { height: 200px; }
 .paper-content .img-container {	margin: 5px 0;text-align: center; }
 .paper-content .img-container img { max-width: 100%;height: inherit; }
+
+/* code container style */
+.code-container {
+	padding: 5px 0 5px 35px;
+	margin: 5px auto;
+	border-radius: 5px;
+	overflow-x: auto;
+	background-color: #272822;
+}
+.code-container xmp {
+	position: relative;
+	padding-left: 5px;
+	margin: 0;
+	border-left: 1px dotted #888888;
+	color: #f8f8f2;
+	font-family: consola;
+	font-size: 0.85em;
+	font-weight: 200;
+}
+.code-container xmp:before {
+	content: attr(data-line);
+	position: absolute;
+	display: block;
+	width: 3em;
+	top: 0;
+	left: 0;
+	margin-left: -50px;
+	text-align: right;
+}
+.code-container .indent-1 { text-indent: 0.5em; }
+.code-container .indent-2 { text-indent: 1em; }
+.code-container .indent-3 { text-indent: 1.5em; }
+.code-container .indent-4 { text-indent: 2em; }
 
 /* define animate */
 @keyframes fade-in {

@@ -1,5 +1,7 @@
 /* custom css for papaers.html */
 body {
+	min-width: 1170px;
+	min-height: 500px;
 	background: url(../img/paper-bg.jpg) no-repeat;
 	background-position: center center;
 
