@@ -1,12 +1,17 @@
 {
 	"tags"    : {
-		"html&css"  : [],
+		"htmlcss"  : [],
 		"javascript": [],
 		"jquery"    : [
 			"0"
 		],
 		"bootstrap" : [
 			"1"
+		]
+	},
+	"timeline": {
+		"2016-01": [
+			"1", "0"
 		]
 	},
 	"category": [

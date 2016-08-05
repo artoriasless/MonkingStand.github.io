@@ -1,7 +1,5 @@
-/* custom css */
+/* custom css for papaers.html */
 body {
-	background: url(../../res/img/papers-bg.jpg) no-repeat;
-	
 	background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
@@ -15,14 +13,9 @@ body {
 	-webkit-background-attachment: fixed;
 }
 
-.nav-container *,
-.nav-container *:hover,
-.nav-container *:link,
-.nav-container *:visited,
-.nav-container *:active {
-	color: #888888;
-	text-decoration: none;
-}
+/*
+ *	nav
+ */
 .nav-container {
 	position: fixed;
 	top: 0;
@@ -38,7 +31,6 @@ body {
 
 	background-color: #ffffff;
 }
-
 .nav-content {
 	width: 1170px;
 	height: 50px;
@@ -47,7 +39,6 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 }
-
 .nav-header {
 	width: 150px;
 	height: 50px;
@@ -56,13 +47,8 @@ body {
 	padding-bottom: 10px;
 	text-align: center;
 }
-.nav-header #logoImg {
-	height: 30px;
-}
-
-.nav-body .nav {
-	height: 50px;
-}
+.nav-header #logoImg { height: 30px; }
+.nav-body .nav { height: 50px; }
 .nav-body .nav > li {
 	float: left;
 
@@ -81,9 +67,7 @@ body {
 	overflow: hidden;
 	cursor: pointer;
 }
-.nav-body .nav > li a:hover {
-	background-color: transparent;
-}
+.nav-body .nav > li a:hover { background-color: transparent; }
 .nav-body .nav > li a span {
 	position: relative;
 	display: inline-block;
@@ -105,10 +89,7 @@ body {
 	-moz-transform: translateY(-100%);
 	transform: translateY(-100%);
 }
-
-#blogLink {
-	position: relative;
-}
+#blogLink { position: relative; }
 #blogLink:after {
 	content: "";
     border-left: 5px solid transparent;
@@ -120,12 +101,19 @@ body {
     margin-left: -5px;
 }
 
+#backLink { font-size: 0.75em; }
+/* nav END */
+
+/*
+ *	content-body 
+ */
 .body-container {
+	position: absolute;
 	width: 100%;
 	padding-top: 5px;
 	margin-top: 50px;
+	z-index: 2
 }
-
 .body-content {
 	width: 1170px;
 	padding-right: 10px;
@@ -134,20 +122,49 @@ body {
 	margin-left: auto;
 }
 
+/* tagList */
+#tagList dd .tag-name {
+	display: inline-block;
+	width: 4.5em;
+}
+/* tagList END */
+
+/* latestList */
+#latestList a {
+	padding-left: 5px;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#latestList a:before {
+	content: attr(data-no);
+	position: absolute;
+	display: block;
+	margin-left: -5px;
+	color: #111111;
+}
+/* latestList END */
+
+/* timeList */
+#timeList .time-val {
+	display: inline-block;
+	width: 4.5em;
+}
+#showTime {
+	position: absolute;
+	display: inline-block;
+	width: 25px;
+	right: 15px;
+	text-align: center;
+	z-index: 2;
+}
+/* timeList END */
+
+/* aboutModal、contactModal */
 #aboutModal .modal-dialog, #contactModal .modal-dialog { margin: 150px auto; }
 #aboutModal .modal-header, #contactModal .modal-header, #contactModal .modal-body { text-align: center; }
 #aboutModal .modal-body a:hover, #contactModal .modal-body a:hover { text-decoration: none; }
-
-#contactModal i.fa-github { color: #111111; }
-#contactModal i.fa-envelope { color: #0067ba; }
-#contactModal i.fa-weibo { color: #e6162d; }
-#contactModal i.fa-weixin { color: #95e75c; }
-#contactModal i.fa-qq { color: #24202b; }
-
-#aboutModal .modal-body dt {
-	position: relative;
-	font-weight: 600;
-}
 #aboutModal .modal-body dt:before {
 	content: "";
 	display: block;
@@ -160,7 +177,4 @@ body {
 	border-bottom: 5px solid transparent;
 	border-left: 5px solid #888888;
 }
-#aboutModal .modal-body dd {
-	margin-left: 25px;
-	font-size: 0.75em;
-}
+/* aboutModal、contactModal END */

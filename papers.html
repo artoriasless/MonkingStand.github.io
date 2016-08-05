@@ -16,7 +16,7 @@
         <!-- bootstrap css -->
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <!-- custom css -->
-        <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" type="text/css" href="res/css/stylesheet.css" media="screen">
 
         <link rel="stylesheet" type="text/css" href="res/css/common.css">
@@ -52,18 +52,106 @@
                     </ul>
                     <ul class="nav pull-right">
                         <li>
-                            <a href="index.html">
-                                Back&nbsp;<i class="fa fa-sign-out"></i>
+                            <a href="index.html" id="backLink">
+                                Back To Homepage&nbsp;<i class="fa fa-sign-out"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div id="loading" class="loading">Loading</div>
+        
+        <div id="bodyContainer" class="body-container hidden">
+            <!-- class="init"，表示页面内容是目录还是具体某一篇文章 -->
+            <div class="body-content row">
+                <div class="col-xs-3">
+                    <!-- Notice -->
+                    <div class="content-block">
+                        <dl class="comm-dl">
+                            <dt>Notice</dt>
+                            <dd>
+                                <i class="fa fa-circle"></i>&nbsp;
+                                访问本 Blog ，未避免部分样式失效，请使用内核支持 CSS3 的浏览器， IE 浏览器请使用 IE9+ 版本。
+                            </dd>
+                            <dd>
+                                <i class="fa fa-circle"></i>&nbsp;
+                                本网站仅供交流阅读使用，转载请注明出处，谢谢。
+                            </dd>
+                        </dl>
+                    </div><!-- Notice END -->
 
-        <div class="body-container">
-            <div class="body-content" data-init="true">
-                test
+                    <!-- Tags -->
+                    <div class="content-block">
+                        <dl id="tagList" class="comm-dl">
+                            <dt>Tags</dt>
+                            <!-- show tags:html&css、javascript、jquery、bootstrap -->
+                            <dd>
+                                <a>
+                                    <span class="tag-name">html&css</span>(<span class="tag-count">--</span>)
+                                </a>
+                            </dd>
+                            <dd>
+                                <a>
+                                    <span class="tag-name">javascript</span>(<span class="tag-count">--</span>)
+                                </a>
+                            </dd>
+                            <dd>
+                                <a>
+                                    <span class="tag-name">jquery</span>(<span class="tag-count">--</span>)
+                                </a>
+                            </dd>
+                            <dd>
+                                <a>
+                                    <span class="tag-name">bootstrap</span>(<span class="tag-count">--</span>)
+                                </a>
+                            </dd>
+                        </dl>
+                    </div><!-- Tags END -->
+
+                    <!-- Latest five papers -->
+                    <div class="content-block">
+                        <dl id="latestList" class="comm-dl">
+                            <dt>Latest</dt>
+                        </dl>
+                    </div><!-- Latest END -->
+
+                    <!-- timeline -->
+                    <div class="content-block">
+                        <dl id="timeList" class="comm-dl">
+                            <a id="showTime"><i class="fa fa-clock-o"></i></a>
+                            <dt>Timeline</dt>
+                        </dl>
+                    </div><!-- timelie END -->
+                </div>
+
+                <div class="col-xs-9">
+                    <div id="paperContent" class="content-block">
+                        <div class="paper-title">
+                            <h1>【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug</h1>
+                        </div>
+                        <div class="paper-subtitle">
+                            <h2>
+                                <span class="subtitle-date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span class="date-val">2016-01-01</span>
+                                </span>
+                                <span class="subtitle-tags">
+                                    <i class="fa fa-tag"></i>
+                                    <span class="tags-val">jquery</span>
+                                </span>
+                            </h2>
+                        </div>
+                        <hr>
+                        <div class="paper-content">
+                            <strong>【背景】</strong>
+                            <p>因为最近要做个操作选项的呼出，然后就想到了用默认隐藏，鼠标划过的时候显示的方法。</p>
+                            <div class="img-container size-lg">
+                                <img src="res/papers/img/test.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -78,13 +166,13 @@
                     </div>
 
                     <div class="modal-body">
-                        <dl>
+                        <dl class="comm-dl">
                             <dt>About WebPage</dt>
                             <dd>
                                 关于网站，除了感谢github、bootstrap、jquery、font-awesome外，还得谢谢Jason Long，因为首页就是在他分享的模板的基础上进行修改的。<br>
                                 PS：好像感谢了他们也看不到，不过还是得感谢一下。
                             </dd>
-                            
+
                             <dt>About Blog</dt>
                             <dd>
                                 关于这个博客的内容，其实大多数内容都是自己的一些笔记和踩过坑。<br>
