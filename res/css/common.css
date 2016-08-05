@@ -1,12 +1,21 @@
 /* common css for all */
 *, *:hover, *:link, *:visited, *:active,
 a, a:hover, a:link, a:visited, a:active {
-	color: #888888;
+	color: #707070;
 	text-decoration: none;
 }
 a { cursor: pointer; }
 
 .hidden { display: none; }
+
+.mask-container {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.85);
+	z-index: 1;
+}
 
 .loading{
 	position: absolute;
@@ -27,48 +36,8 @@ a { cursor: pointer; }
 
     font-size: 15px;
     color: #ffffff;
-    background: #444444 url(../../res/img/loader.gif) no-repeat 10px 50%;    
+    background: #444444 url(../img/loader.gif) no-repeat 10px 50%;    
     z-index: 9999;      
-}
-
-@keyframes fade-in {
-	0% { opacity: 0; }
-	100% {opacity: 1; }
-}
-@-o-keyframes fade-in {
-	0% { opacity: 0; }
-	100% {opacity: 1; }
-}
-@-ms-keyframes fade-in {
-	0% { opacity: 0; }
-	100% {opacity: 1; }
-}
-@-moz-keyframes fade-in {
-	0% { opacity: 0; }
-	100% {opacity: 1; }
-}
-@-webkit-keyframes fade-in {
-	0% { opacity: 0; }
-	100% {opacity: 1; }
-}
-.fade-in-animate {
-	animation-name: fade-in;
-	-o-animation-name: fade-in;
-	-ms-animation-name: fade-in;
-	-moz-animation-name: fade-in;
-	-webkit-animation-name: fade-in;
-
-	animation-duration: 2s;
-	-o-animation-duration: 2s;
-	-ms-animation-duration: 2s;
-	-moz-animation-duration: 2s;
-	-webkit-animation-duration: 2s;
-
-	animation-timing-function: ease;
-	-o-animation-timing-function: ease;
-	-ms-animation-timing-function: ease;
-	-moz-animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
 }
 
 .network-err:after {
@@ -95,7 +64,7 @@ a { cursor: pointer; }
 	position: relative;
 	padding: 5px;
 	margin: 10px 5px;
-	border: 1px solid #f5f5f5;
+	border: 1px solid #b1b1b1;
 	border-radius: 10px;
 }
 
@@ -111,6 +80,7 @@ a { cursor: pointer; }
 	font-size: 0.8em;
 }
 .comm-dl dd a {
+	position: relative;
 	display: block;
 	height: 25px;
 	line-height: 25px;
@@ -119,6 +89,39 @@ a { cursor: pointer; }
 	cursor: pointer;
 }
 .comm-dl dd a:hover { background-color: #eeeeee; }
+#tagList dd a:hover, 
+#timeList dd a:hover {
+	animation-name: move-animate;
+	-o-animation-name: move-animate;
+	-ms-animation-name: move-animate;
+	-moz-animation-name: move-animate;
+	-webkit-animation-name: move-animate;
+
+	animation-duration: 0.5s;
+	-o-animation-duration: 0.5s;
+	-ms-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+
+	animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+	padding-left: 15px;
+}
+#tagList dd a:hover:before, 
+#timeList dd a:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #888888;
+}
 
 /*
  *	font-awesome icon custom style
@@ -210,3 +213,65 @@ i.fa-qq       { color: #24202b; }
 .paper-content .size-sm { height: 200px; }
 .paper-content .img-container {	margin: 5px 0;text-align: center; }
 .paper-content .img-container img { max-width: 100%;height: inherit; }
+
+/* define animate */
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+@-o-keyframes fade-in {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+@-ms-keyframes fade-in {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+@-moz-keyframes fade-in {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+@-webkit-keyframes fade-in {
+	0% { opacity: 0; }
+	100% {opacity: 1; }
+}
+.fade-in-animate {
+	animation-name: fade-in;
+	-o-animation-name: fade-in;
+	-ms-animation-name: fade-in;
+	-moz-animation-name: fade-in;
+	-webkit-animation-name: fade-in;
+
+	animation-duration: 2s;
+	-o-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+
+	animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+}
+
+@keyframes move-animate {
+	0% { padding-left: 0; }
+	100% { padding-left: 15px; }
+}
+@-o-keyframes move-animate {
+	0% { padding-left: 0; }
+	100% { padding-left: 15px; }
+}
+@-ms-keyframes move-animate {
+	0% { padding-left: 0; }
+	100% { padding-left: 15px; }
+}
+@-moz-keyframes move-animate {
+	0% { padding-left: 0; }
+	100% { padding-left: 15px; }
+}
+@-webkit-keyframes move-animate {
+	0% { padding-left: 0; }
+	100% { padding-left: 15px; }
+}

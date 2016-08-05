@@ -1,5 +1,8 @@
 /* custom css for papaers.html */
 body {
+	background: url(../img/paper-bg.jpg) no-repeat;
+	background-position: center center;
+
 	background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
