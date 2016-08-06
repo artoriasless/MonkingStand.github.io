@@ -209,7 +209,7 @@ i.fa-qq       { color: #24202b; }
 .paper-content .img-container.size-lg { height: 500px; }
 .paper-content .img-container.size-md { height: 350px; }
 .paper-content .img-container.size-sm { height: 200px; }
-.paper-content .img-container {	margin: 5px 0;text-align: center; }
+.paper-content .img-container {	margin: 15px 0;text-align: center; }
 .paper-content .img-container img { max-width: 100%;height: inherit; }
 /* code container */
 .code-container {
