@@ -11,6 +11,8 @@
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
         <!-- bootstrap css -->
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <!-- show time plugin -->
+        <link rel="stylesheet" type="text/css" href="plugins/roundabout/roundabout2.css">
         <!-- custom css -->
         <link rel="stylesheet" type="text/css" href="res/css/stylesheet.css" media="screen">
 
@@ -104,7 +106,24 @@
                     <div class="content-block">
                         <dl id="timeList" class="comm-dl">
                             <a id="timeIcon"><i class="fa fa-clock-o"></i></a>
-                            <dt>Timeline</dt>
+                            <dt id="timeLineTitle">
+                                Timeline<br>
+                                <div id="timeBlock"><!-- to show current time -->
+                                    <div class="crappy-plastic-part-made-in-china">
+                                        <div class="pad">
+                                            <ul id="hours-tens"><li>&nbsp;</li><li>1</li></ul>
+                                            <ul id="hours-ones"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+                                            <ul class="delimiter"><li>:</li></ul>
+                                            <ul id="minutes-tens"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+                                            <ul id="minutes-ones"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+                                            <ul class="delimiter"><li>.</li></ul>
+                                            <ul id="seconds-tens"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+                                            <ul id="seconds-ones"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+                                            <ul id="ampm"><li>am</li><li>pm</li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dt>
                             <!-- <dd>2011-01-01</dd> -->
                         </dl>
                     </div><!-- timelie END -->
@@ -214,6 +233,10 @@
         <script type="text/javascript" src="jquery/2.1/jquery.js"></script>
         <!-- bootstrap js -->
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- show time plugin -->
+        <script type="text/javascript" src="plugins/roundabout/jquery.roundabout2.js"></script>
+        <script type="text/javascript" src="plugins/roundabout/jquery.roundabout-shapes2.js"></script>
+        <script type="text/javascript" src="plugins/roundabout/jquery.easing.js"></script>
         <!-- sys js -->
         <script type="text/javascript" src="res/js/app.js"></script>
         <!-- main js -->
