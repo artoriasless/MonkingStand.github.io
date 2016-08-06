@@ -1,37 +1,42 @@
 {
-	"tags"    : {
-		"htmlcss"  : [],
-		"javascript": [],
-		"jquery"    : [
-			"0"
-		],
-		"bootstrap" : [
-			"1"
-		]
-	},
-	"timeline": {
-		"2016-01": [
-			"1", "0"
-		]
-	},
-	"category": [
-		{
-			"index"   : "0",
-			"title"   : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
-			"path"    : "res/papers/content/content001.json",
-			"date"    : "2016-01-09",
-			"tag"     : "jquery",
-			"others"  : "",
-			"abstract": "jquery中，使用animate、slide、fade等动画，如果多次触发（click、hover等），由于其执行是一个持续的过程，如果不采取一定的措施，会导致滞后多次执行的bug。"
-		},
-		{
-			"index"   : "1",
-			"title"   : "【bootstrap】中，tooltip在触发元素remove后的小bug",
-			"path"    : "res/papers/content/content002.json",
-			"date"    : "2016-01-15",
-			"tag"     : "bootstrap",
-			"others"  : "tooltip",
-			"abstract": "bootstrap中的tooltip，当遇到以下情形时：将触发tooltip的a标签进行remove后，其对应的tooltip会一直显示在页面上，导致出现bug。"
-		}
-	]
+"tags"    : {
+"html&css"  : [],
+"javascript": [],
+"jquery"    : ["0"],
+"bootstrap" : ["1"],
+"json"      : ["2"]
+},
+"timeline": {
+"2016-01": ["1", "0"],
+"2016-02": ["2"]
+},
+"category": [
+{
+"index"   : "0",
+"title"   : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
+"path"    : "res/papers/content/content001.json",
+"date"    : "2016-01-09",
+"tag"     : "jquery",
+"others"  : "",
+"abstract": "jquery中，使用animate、slide、fade等动画，如果多次触发（click、hover等），由于其执行是一个持续的过程，如果不采取一定的措施，会导致滞后多次执行的bug。"
+},
+{
+"index"   : "1",
+"title"   : "【bootstrap】中，tooltip在触发元素remove后的小bug",
+"path"    : "res/papers/content/content002.json",
+"date"    : "2016-01-15",
+"tag"     : "bootstrap",
+"others"  : "tooltip",
+"abstract": "bootstrap中的tooltip，当遇到以下情形时：将触发tooltip的a标签进行remove后，其对应的tooltip会一直显示在页面上，导致出现bug。"
+},
+{
+"index"   : "2",
+"title"   : "【json】读取本地json时，无法读取到的bug时，自己踩的一些坑",
+"path"    : "res/papers/content/content003.json",
+"date"    : "2016-02-10",
+"tag"     : "json",
+"others"  : "",
+"abstract": "之前自己做了个小东西，反正就是中间有一部要读取本地的json文件，然后就需要自己写一个自定义json文件用作测试，然后就碰到了一个小坑，发现读取失败（也就是读取成功后的回调函数没有执行）。另外，读取json文件用的是jquery提供的getJSON()方法。"
+}
+]
 }

@@ -17,15 +17,23 @@ var papers = {
 	},
 	initTags: function(tags) {
 		/* 初始化“我的标签”，统计对应标签的的篇数 */
+		// <dd><a><span class="tag-name">html&css</span>(<span class="tag-count">--</span>)</a></dd>
 		var i = 0,
-			tagCount = [tags.htmlcss.length, tags.javascript.length, tags.jquery.length, tags.bootstrap.length],
-			indexArr = [tags.htmlcss.join(), tags.javascript.join(), tags.jquery.join(), tags.bootstrap.join()];
+			tagsStr   = '',
+			tagsCount = tags.length;
 
-		$('#tagList .tag-count').each(function() {
-			$(this).text(tagCount[i]);
-			$(this).closest('a').attr('onclick', 'papers.renderCategory(\'' + (indexArr[i] ? indexArr[i] : '-1') + '\')');
-			i ++;
-		})
+		for (var key in tags) {
+			var tempTag   = tags[key],
+				tempCount = tempTag.length,
+				indexStr  = (tempCount != 0) ? tempTag.join('') : '-1';
+
+			tagsStr +=	'<dd><a onclick="papers.renderCategory(\'' + indexStr + '\')">' +
+							'<span class="tag-name">' + key + '</span>(<span class="tag-count">' + tempCount + '</span>)' +
+						'</a></dd>';
+		}
+		i ++;
+
+		$('#tagList').append(tagsStr);
 	},
 	initLatest: function(category) {
 		/* 初始化“最近文章”，显示最近的5篇文章标题 */
@@ -46,16 +54,16 @@ var papers = {
 		$('#latestList').append(latestStr);
 	},
 	initTimeline: function(timeline) {
-		/* 初始化时间线，按时间先后显示有发布文章的年月 */
+		/* 初始化时间线，按时间先后显示有发布文章的年月,即 2016-03-03 -> 2016-02-02 -> 2016-01-01 */
         var timelineStr = '';
 
         for (key in timeline) {
         	var indexStr = timeline[key].length ? timeline[key].join() : '-1';
-        	timelineStr +=	'<dd>' +
+        	timelineStr =	'<dd>' +
         						'<a onclick="papers.renderCategory(\'' + indexStr + '\')">' +
         							'<span class="time-val">' + key + '</span>(<span class="count">' + timeline[key].length + '</span>)' +
         						'</a>' +
-        					'</dd>';
+        					'</dd>' + timelineStr;
         }
 
         $('#timeList').append(timelineStr);

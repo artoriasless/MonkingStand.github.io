@@ -148,14 +148,6 @@ body {
 	display: inline-block;
 	width: 4.5em;
 }
-#timeIcon {
-	position: absolute;
-	display: inline-block;
-	width: 25px;
-	right: 15px;
-	text-align: center;
-	z-index: 2;
-}
 /* #tagList、#timeList dd markup hover animation */
 @keyframes move-animate {
 	0% { padding-left: 0; }
