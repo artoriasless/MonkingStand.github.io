@@ -9,14 +9,9 @@
         <title>MS blog content</title>
         <!-- font-awesome -->
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-        <!-- jquery-ui css -->
-        <!--
-        <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.min.css">
-        -->
         <!-- bootstrap css -->
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <!-- custom css -->
-        <!-- <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" type="text/css" href="res/css/stylesheet.css" media="screen">
 
         <link rel="stylesheet" type="text/css" href="res/css/common.css">
@@ -33,39 +28,33 @@
                     <ul class="nav nav-list pull-left">
                         <li>
                             <a id="blogLink">
-                                <i class="fa fa-book"></i>&nbsp;
-                                <span data-hover="目录">Blog</span>
+                                <i class="fa fa-book"></i>&nbsp;<span data-hover="目录">Blog</span>
                             </a>
                         </li>
                         <li>
                             <a id="aboutLink" data-toggle="modal" data-target="#aboutModal">
-                                <i class="fa fa-info-circle"></i>&nbsp;
-                                <span data-hover="关于">About</span>
+                                <i class="fa fa-info-circle"></i>&nbsp;<span data-hover="关于">About</span>
                             </a>
                         </li>
                         <li>
                             <a id="contactLink" data-toggle="modal" data-target="#contactModal">
-                                <i class="fa fa-envelope-o"></i>&nbsp;
-                                <span data-hover="粉我！">Contact</span>
+                                <i class="fa fa-envelope-o"></i>&nbsp;<span data-hover="粉我！">Contact</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
                         <li>
-                            <a href="index.html" id="backLink">
-                                Back To Homepage&nbsp;<i class="fa fa-sign-out"></i>
-                            </a>
+                            <a href="index.html" id="backLink">Back To Homepage&nbsp;<i class="fa fa-sign-out"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="mask-container"></div>
-
         <div id="loading" class="loading">Loading</div>
         
         <div id="bodyContainer" class="body-container hidden">
-            <!-- class="init"，表示页面内容是目录还是具体某一篇文章 -->
+            <!-- class="category"，区别【全部文章title】和【某一类别下文章title或某一篇具体文章】 -->
             <div class="body-content row">
                 <div class="col-xs-3">
                     <!-- Notice -->
@@ -89,24 +78,16 @@
                             <dt>Tags</dt>
                             <!-- show tags:html&css、javascript、jquery、bootstrap -->
                             <dd>
-                                <a>
-                                    <span class="tag-name">html&css</span>(<span class="tag-count">--</span>)
-                                </a>
+                                <a><span class="tag-name">html&css</span>(<span class="tag-count">--</span>)</a>
                             </dd>
                             <dd>
-                                <a>
-                                    <span class="tag-name">javascript</span>(<span class="tag-count">--</span>)
-                                </a>
+                                <a><span class="tag-name">javascript</span>(<span class="tag-count">--</span>)</a>
                             </dd>
                             <dd>
-                                <a>
-                                    <span class="tag-name">jquery</span>(<span class="tag-count">--</span>)
-                                </a>
+                                <a><span class="tag-name">jquery</span>(<span class="tag-count">--</span>)</a>
                             </dd>
                             <dd>
-                                <a>
-                                    <span class="tag-name">bootstrap</span>(<span class="tag-count">--</span>)
-                                </a>
+                                <a><span class="tag-name">bootstrap</span>(<span class="tag-count">--</span>)</a>
                             </dd>
                         </dl>
                     </div><!-- Tags END -->
@@ -115,14 +96,16 @@
                     <div class="content-block">
                         <dl id="latestList" class="comm-dl">
                             <dt>Latest</dt>
+                            <!-- <dd><a>文章标题</a></dd> -->
                         </dl>
                     </div><!-- Latest END -->
 
                     <!-- timeline -->
                     <div class="content-block">
                         <dl id="timeList" class="comm-dl">
-                            <a id="showTime"><i class="fa fa-clock-o"></i></a>
+                            <a id="timeIcon"><i class="fa fa-clock-o"></i></a>
                             <dt>Timeline</dt>
+                            <!-- <dd>2011-01-01</dd> -->
                         </dl>
                     </div><!-- timelie END -->
                 </div>
@@ -135,12 +118,10 @@
                         <div class="paper-subtitle">
                             <h3>
                                 <span class="subtitle-date">
-                                    <i class="fa fa-calendar"></i>&nbsp;
-                                    <span class="date-val"></span>
+                                    <i class="fa fa-calendar"></i>&nbsp;<span class="date-val"></span>
                                 </span>
                                 <span class="subtitle-tags">
-                                    <i class="fa fa-tag"></i>&nbsp;
-                                    <span class="tags-val"></span>
+                                    <i class="fa fa-tag"></i>&nbsp;<span class="tags-val"></span>
                                 </span>
                             </h3>
                         </div>
@@ -174,6 +155,13 @@
                                 关于这个博客的内容，其实大多数内容都是自己的一些笔记和踩过坑。<br>
                                 PS：其实这些个内容都是别人踩过的坑，百度都能搜得到，不过还是想把这些放上来，抽空回忆一下曾经也那么二逼。
                             </dd>
+
+                            <dt>About Website</dt>
+                            <dd>
+                                关于这个网站的内容，除去首页用了Json Long的模板再做点了修改，内容显示页，全部采用原创手写，虽说挺费时间，不过至少达到了自己要的效果。<br>
+                                内容展示页面采用和SPA类似的渲染方式，至于数据存储，因为没有用到数据库这一方面的东西（自己不会，也暂时不想费时去折腾），就采用了引入本地json来模拟ajax的情形。<br>
+                                PS：这个网站暂时没做自适应（布局不太好调整），等PC端的完成了，之后会再新增一个专门针对wap的版本。<br>另外，对于代码高亮这块，是我个人做的一套方案，只有html、css及js的代码显示和行号，但是没做高亮，主要是还是觉得别人的解决方案有点蛋疼、复杂，虽说是用js自动转的，后续再考虑如何解决这块吧。
+                            </dd>
                         </dl>
                     </div><!-- modal-baody -->
                 </div><!-- modal-content -->
@@ -205,7 +193,7 @@
                         </a>&nbsp;&nbsp;
                         <a data-toggle="tooltip" title="follow me on qq" href="http://sighttp.qq.com/msgrd?v=3&uin=913270680&site=&menu=yes" target="_blank">
                             <i class="fa fa-lg fa-qq"></i>
-                        </a>&nbsp;&nbsp;
+                        </a>
                     </div><!-- modal-baody -->
                 </div><!-- modal-content -->
             </div><!-- modal-dialog -->
@@ -213,13 +201,8 @@
 
         <!-- jquery -->
         <script type="text/javascript" src="jquery/2.1/jquery.js"></script>
-        <!-- jquery-ui js -->
-        <!--
-        <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
-        -->
         <!-- bootstrap js -->
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
         <!-- sys js -->
         <script type="text/javascript" src="res/js/app.js"></script>
         <!-- main js -->

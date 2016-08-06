@@ -11,11 +11,10 @@ var papers = {
 		    papers.initTimeline(timeline);
 		    papers.initCategory(category);
 
-		    $('#bodyContainer').addClass('init');
+		    $('#bodyContainer').addClass('category');
 		    showContent('#bodyContainer');
 	    })
 	},
-
 	initTags: function(tags) {
 		/* 初始化“我的标签”，统计对应标签的的篇数 */
 		var i = 0,
@@ -28,14 +27,8 @@ var papers = {
 			i ++;
 		})
 	},
-
 	initLatest: function(category) {
-		/* 初始化“最近文章”，显示最近的5片文章标题 */
-		//	<dd>
-	    //      <a data-no="1." title="【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug">
-	    //         【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug"
-	    //      </a>
-	    //  </dd>
+		/* 初始化“最近文章”，显示最近的5篇文章标题 */
 		var descIndex = category.length - 1,
 			latestStr = '',
 			count     = 0;
@@ -52,12 +45,8 @@ var papers = {
 
 		$('#latestList').append(latestStr);
 	},
-
 	initTimeline: function(timeline) {
 		/* 初始化时间线，按时间先后显示有发布文章的年月 */
-		//	<dd>
-	    //      <a><span class="time-val">2016-11</span>(<span class="count">--</span>)</a>
-	    //  </dd>
         var timelineStr = '';
 
         for (key in timeline) {
@@ -71,7 +60,6 @@ var papers = {
 
         $('#timeList').append(timelineStr);
 	},
-
 	initCategory: function(category) {
 		/* 初始化目录，显示全部的文章标题 */
 		var indexStr  = '',
@@ -81,111 +69,100 @@ var papers = {
 			indexStr += category[descIndex].index + ',';
 		}
 		indexStr += '0';
-
 		papers.renderCategory(indexStr);
 	},
-
 	renderCategory: function(indexStr) {
 		/* 根据标签、时间轴，渲染显示对应类别下的文章目录 */
-		/*
-		<div class="category-item">
-            <div class="item-title">
-                <h2><a>标题</a></h2>
-            </div>
-            <div class="item-subtitle">
-                <h3>
-                    <span class="subtitle-date">
-                        <i class="fa fa-calendar"></i>
-                        <span class="date-val">2016-01-01</span>
-                    </span>
-                    <span class="subtitle-tags">
-                        <i class="fa fa-tag"></i>
-                        <span class="tags-val">jquery</span>
-                    </span>
-                </h3>
-            </div>
-            <div class="item-abstract">
-                <p>简介</p>
-            </div>
-        </div>
-		*/
+		/* 传过来的indexStr已经按照时间远近，从最近到最早进行了排序 */
+		$('#bodyContainer').addClass('category');
 		if (indexStr == '-1') {
+
 			$('#paperContent .paper-title h1').empty().text('Directory');
 			$('#paperContent .paper-content').empty().addClass('no-item');
 			showContent('#paperContent');
 			return ;
 		}
-
 		var indexArr   = indexStr.split(','),
-			descIndex  = indexArr.length - 1,
+			indexCount  = indexArr.length,
 			categoryStr = '';
 
-		if (category.length == (descIndex + 1)) {
-			$('#bodyContainer').addClass('init');
-		}
-		else {
-			$('#bodyContainer').removeClass('init');
-		}
-
-		for (; descIndex >= 0; descIndex --) {
-			var tempObj = category[indexArr[descIndex]],
+		for (var i = 0; i < indexCount; i ++) {
+			var tempObj = category[indexArr[i]],
 				tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
 
 			categoryStr +=	'<div class="category-item">' +
-							'<div class="item-title">' +
-								'<h2><a onclick="papers.renderPaper(\'' + tempObj.index + '\')" title="' + tempObj.title + '" data-hover="' + tempObj.title + '">' + tempObj.title + '</a></h2>' +
-							'</div>' +
-							'<div class="item-subtitle">' +
-								'<h3>' +
-									'<span class="subtitle-date">' + 
-										'<i class="fa fa-calendar"></i>&nbsp;<span class="date-val">' + tempObj.date + '</span>' + 
-									'</span>' +
-									'<span class="subtitle-tags">' + 
-										'<i class="fa fa-tag"></i>&nbsp;<span class="tags-val">' + tags + '</span>' + 
-									'</span>' +
-								'</h3>' +
-							'</div>' +
-							'<div class="item-abstract"><p>' + tempObj.abstract +'</p></div>' +
-						'</div>';
+								'<div class="item-title">' +
+									'<h2><a onclick="papers.renderPaper(\'' + tempObj.index + '\')" title="' + tempObj.title + '" data-hover="' + tempObj.title + '">' + tempObj.title + '</a></h2>' +
+								'</div>' +
+								'<div class="item-subtitle">' +
+									'<h3>' +
+										'<span class="subtitle-date">' + 
+											'<i class="fa fa-calendar"></i>&nbsp;<span class="date-val">' + tempObj.date + '</span>' + 
+										'</span>' +
+										'<span class="subtitle-tags">' + 
+											'<i class="fa fa-tag"></i>&nbsp;<span class="tags-val">' + tags + '</span>' + 
+										'</span>' +
+									'</h3>' +
+								'</div>' +
+								'<div class="item-abstract"><p>' + tempObj.abstract +'</p></div>' +
+							'</div>';
 		}
 		
 		hideContent('#paperContent')
 		$('#paperContent .paper-title h1').empty().text('Directory');
 		$('#paperContent .paper-content').removeClass('no-item').empty().append(categoryStr);
 		showContent('#paperContent');
+		//TODO
+		console.info('目录显示采用分页！TODO')
 	},
-
 	renderPaper: function(index) {
 		/* 根据指定的文章索引，渲染对应的文章内容 */
-		/*
-		<strong>小标题</strong>
-        <p>文本内容</p>
-        <div class="img-container size-lg">
-            <img src="图片">
-        </div>
-		*/
 		hideContent('#paperContent');
 
-		var tempObj = category[index],
-			tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
-		$('#bodyContainer').removeClass('init');
-		$('#paperContent .paper-title h1').empty().text(tempObj.title);
-		$('#paperContent .paper-subtitle .date-val').text(tempObj.date);
-		$('#paperContent .paper-subtitle .tags-val').text(tags);
+		$.getJSON(category[index].path, function(data) {
+			var title   = data.title,
+				date    = data.date,
+				tag     = data.tag,
+				content = data.content.join('');
+
+			$('#bodyContainer').removeClass('category');
+			$('#paperContent .paper-title h1').empty().text(title);
+			$('#paperContent .paper-subtitle .date-val').text(date);
+			$('#paperContent .paper-subtitle .tags-val').text(tag);
+			$('#paperContent .paper-content').empty().append(content);
+			$('.code-container').each(function() {
+				var count = 1;
+				$(this).find('xmp').each(function() {
+					if ($(this).hasClass('indent-4') && count > 100) { $(this).addClass('indent-lg'); }
+
+					if ($(this).hasClass('indent-5') && count > 9 && count < 100) { $(this).addClass('indent-sm'); }
+					if ($(this).hasClass('indent-5') && count < 9) { $(this).addClass('indent-xs'); }
+
+					if ($(this).hasClass('indent-6') && count > 9 && count < 100) { $(this).addClass('indent-sm'); }
+					if ($(this).hasClass('indent-6') && count < 9) { $(this).addClass('indent-xs'); }
+
+					$(this).attr('data-line', count++);
+
+				})
+			})
+
+			/* 设置滚动条滚到顶部，即复位 */
+			$('body').scrollTop = 0;
+			showContent('#paperContent');
+	    })
+		/*
 		var test =	'<div class="code-container">' +
 						'<code>' + 
-							'<xmp data-line="1"><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong></xmp>' + 
-							'<xmp data-line="12" class="indent-1"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="51" class="indent-2"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="1" class="indent-3"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="12"><div><span>asdasd</span></div></xmp>' + 
+							'<xmp data-line="9"><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong></xmp>' + 
+							'<xmp data-line="10" class="indent-1"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="19" class="indent-2"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="20" class="indent-3"><div><span>asdasd</span></div></xmp>' +
+							'<xmp data-line="99" class="indent-4"><div><span>asdasd</span></div></xmp>' + 
+							'<xmp data-line="100" class="indent-5"><div><span>asdasd</span></div></xmp>' + 
+							'<xmp data-line="101" class="indent-6"><div><span>asdasd</span></div></xmp>' + 
 						'</code>' +
 					'</div>';
-		$('#paperContent .paper-content').empty().append(test);
-
-		showContent('#paperContent');
-		//TODO
-		console.info('采用分页！')
+		*/
 	}
 }
 
