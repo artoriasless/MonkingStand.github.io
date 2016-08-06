@@ -211,11 +211,17 @@ body {
 	border-left: 5px solid #888888;
 }
 /* paper content */
-.category .paper-subtitle { display: none; }
+.category .paper-subtitle, .category .paper-footer, .category .footer-hr { display: none; }
 #paperContent hr {
 	padding: 0;
 	margin: 0;
 }
+#paperContent .paper-footer { margin: 15px 25px 50px;font-size: 0.75em; }
+#paperContent .paper-footer > div { height: 20px;line-height: 20px; }
+#paperContent .paper-footer .pre-title { text-align: left; }
+#paperContent .paper-footer .next-title { text-align: right; }
+#paperContent .paper-footer a { width: 300px;height:20px;line-height: 20px;display: inline-block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; }
+#paperContent .paper-footer i { height: 20px;line-height: 20px; }
 /* aboutModal、contactModal */
 #aboutModal .modal-content {
 	width: 600px;

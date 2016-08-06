@@ -118,12 +118,17 @@ var papers = {
 	renderPaper: function(index) {
 		/* 根据指定的文章索引，渲染对应的文章内容 */
 		hideContent('#paperContent');
+		console.info(category[index].path);
 
 		$.getJSON(category[index].path, function(data) {
 			var title   = data.title,
 				date    = data.date,
 				tag     = data.tag,
-				content = data.content.join('');
+				content = data.content.join(''),
+
+				maxIndex  = category.length - 1,
+				preIndex  = (index == maxIndex) ? '-1' : (parseInt(index) + 1),
+				nextIndex = (index == 0) ? '-1' : (parseInt(index) - 1);
 
 			$('#bodyContainer').removeClass('category');
 			$('#paperContent .paper-title h1').empty().text(title);
@@ -146,23 +151,26 @@ var papers = {
 				})
 			})
 
+			if (preIndex != '-1') {
+				$('#prePaper').text(category[preIndex].title).attr({
+					'onclick': 'papers.renderPaper(\'' + preIndex + '\')',
+					'title'  : category[preIndex].title
+				});
+			}
+			else { $('#prePaper').text('已经是第一篇了！没有上一篇了！').removeAttr('onclick'); }
+
+			if (nextIndex != '-1') {
+				$('#nextPaper').text(category[nextIndex].title).attr({
+					'onclick': 'papers.renderPaper(\'' + nextIndex + '\')',
+					'title'  : category[nextIndex].title
+				});
+			}
+			else { $('#nextPaper').text('已经是最后一篇了！没有下一篇了！').removeAttr('onclick'); }
+
 			/* 设置滚动条滚到顶部，即复位 */
 			$('body').scrollTop = 0;
 			showContent('#paperContent');
 	    })
-		/*
-		var test =	'<div class="code-container">' +
-						'<code>' + 
-							'<xmp data-line="9"><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong><strong class="test"></strong></xmp>' + 
-							'<xmp data-line="10" class="indent-1"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="19" class="indent-2"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="20" class="indent-3"><div><span>asdasd</span></div></xmp>' +
-							'<xmp data-line="99" class="indent-4"><div><span>asdasd</span></div></xmp>' + 
-							'<xmp data-line="100" class="indent-5"><div><span>asdasd</span></div></xmp>' + 
-							'<xmp data-line="101" class="indent-6"><div><span>asdasd</span></div></xmp>' + 
-						'</code>' +
-					'</div>';
-		*/
 	}
 }
 
