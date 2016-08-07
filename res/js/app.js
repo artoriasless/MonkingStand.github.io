@@ -126,7 +126,6 @@ var papers = {
 	renderPaper: function(index) {
 		/* 根据指定的文章索引，渲染对应的文章内容 */
 		hideContent('#paperContent');
-		console.info(category[index].path);
 
 		$.getJSON(category[index].path, function(data) {
 			var title   = data.title,
@@ -146,8 +145,7 @@ var papers = {
 			$('.code-container').each(function() {
 				var count = 1;
 				/* xmp标签在HTML4.0中被废除，且在IE中不能正常显示，现改为pre标签 —————— edit in 2016-08-07 */
-				/* $(this).find('xmp').each(function() { */
-				$(this).find('pre').each(function() {
+				$(this).find('xmp').each(function() {
 					if ($(this).hasClass('indent-4') && count > 100) { $(this).addClass('indent-lg'); }
 
 					if ($(this).hasClass('indent-5') && count > 9 && count < 100) { $(this).addClass('indent-sm'); }
