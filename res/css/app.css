@@ -215,11 +215,8 @@ body {
 #paperContent .paper-footer a { width: 300px;height:20px;line-height: 20px;display: inline-block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; }
 #paperContent .paper-footer i { height: 20px;line-height: 20px; }
 /* aboutModal、contactModal */
-#aboutModal .modal-content {
-	width: 600px;
-	margin-left: -150px;	
-}
-#aboutModal .modal-dialog, #contactModal .modal-dialog { margin: 150px auto; }
+#aboutModal .modal-dialog { margin: 100px auto; }
+#contactModal .modal-dialog { margin: 150px auto; }
 #aboutModal .modal-header, #contactModal .modal-header, #contactModal .modal-body { text-align: center; }
 #aboutModal .modal-body a:hover, #contactModal .modal-body a:hover { text-decoration: none; }
 #aboutModal .modal-body dt:before {
