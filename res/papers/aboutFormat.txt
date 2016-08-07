@@ -13,7 +13,7 @@ format of paper content
 图片div  —— <div class="img-container"></div>
               <div><img scr=""></div>                   
 代码div  —— <div class="code-container"></div>
-              <div><code><pre></pre></code></div>
+              <div><code><xmp></xmp></code></div>
 引用内容 —— <div class="refer-content"></div>
               <div class="refer-content"><p></p></div>
 
