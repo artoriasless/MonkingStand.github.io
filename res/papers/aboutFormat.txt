@@ -1,4 +1,4 @@
-category and content for blog papers
+﻿category and content for blog papers
 
 about category
     标签对应的文章索引，按照时间，时间最早的在最后面，换言之，索引从大到小
@@ -13,7 +13,7 @@ format of paper content
 图片div  —— <div class="img-container"></div>
               <div><img scr=""></div>                   
 代码div  —— <div class="code-container"></div>
-              <div><code><xmp></xmp></code></div>
+              <div><code><pre></pre></code></div>
 引用内容 —— <div class="refer-content"></div>
               <div class="refer-content"><p></p></div>
 

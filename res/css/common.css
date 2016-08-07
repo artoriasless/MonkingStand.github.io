@@ -229,7 +229,8 @@ i.fa-qq       { color: #24202b; }
 	overflow: auto;
 	background-color: #272822;
 }
-.code-container xmp {
+/* xmp标签在HTML4.0中被废除，且在IE下不能正常显示，现改为pre标签 ———— edit in 2016-08-07 */
+.code-container pre {
 	position: relative;
 	padding-left: 5px;
 	margin: 0;
@@ -239,7 +240,7 @@ i.fa-qq       { color: #24202b; }
 	font-size: 0.85em;
 	font-weight: 200;
 }
-.code-container xmp:before {
+.code-container pre:before {
 	content: attr(data-line);
 	position: absolute;
 	display: block;
@@ -249,13 +250,13 @@ i.fa-qq       { color: #24202b; }
 	margin-left: -4em;
 	text-align: right;
 }
-.code-container xmp.indent-4.indent-lg:before { margin-left: -4.15em; } /* 缩进4级，若为三位数，修改margin-left的值 */
-.code-container xmp.indent-5:before { margin-left: -4.7em; }
-.code-container xmp.indent-5.indent-sm:before { margin-left: -4.15em; } /* 缩进5级，若为两位数，修改margin-left的值 */
-.code-container xmp.indent-5.indent-xs:before { margin-left: -4.05em; } /* 缩进6级，若为一位数，修改margin-left的值 */
-.code-container xmp.indent-6:before { margin-left: -5.2em; }
-.code-container xmp.indent-6.indent-sm:before { margin-left: -4.6em; } /* 缩进6级，若为两位数，修改margin-left的值 */
-.code-container xmp.indent-6.indent-xs:before { margin-left: -4.1em; } /* 缩进6级，若为一位数，修改margin-left的值 */
+.code-container pre.indent-4.indent-lg:before { margin-left: -4.15em; } /* 缩进4级，若为三位数，修改margin-left的值 */
+.code-container pre.indent-5:before { margin-left: -4.7em; }
+.code-container pre.indent-5.indent-sm:before { margin-left: -4.15em; } /* 缩进5级，若为两位数，修改margin-left的值 */
+.code-container pre.indent-5.indent-xs:before { margin-left: -4.05em; } /* 缩进6级，若为一位数，修改margin-left的值 */
+.code-container pre.indent-6:before { margin-left: -5.2em; }
+.code-container pre.indent-6.indent-sm:before { margin-left: -4.6em; } /* 缩进6级，若为两位数，修改margin-left的值 */
+.code-container pre.indent-6.indent-xs:before { margin-left: -4.1em; } /* 缩进6级，若为一位数，修改margin-left的值 */
 .code-container .indent-1 { text-indent: 0.5em; }
 .code-container .indent-2 { text-indent: 1em; }
 .code-container .indent-3 { text-indent: 1.5em; }
