@@ -84,6 +84,8 @@ var papers = {
 	renderCategory: function(indexStr) {
 		/* 根据标签、时间轴，渲染显示对应类别下的文章目录 */
 		/* 传过来的indexStr已经按照时间远近，从最近到最早进行了排序 */
+		$('#bodyContainer').addClass('category');
+
 		if (indexStr == '-1') {
 
 			$('#paperContent .paper-title h1').empty().text('Directory');
