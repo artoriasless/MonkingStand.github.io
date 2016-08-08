@@ -1,20 +1,20 @@
 {
 "tags"    : {
 "html&css"  : [],
-"javascript": [],
+"javascript": ["3"],
 "jquery"    : ["0"],
 "bootstrap" : ["1"],
 "json"      : ["2"]
 },
 "timeline": {
 "2016-01": ["1", "0"],
-"2016-02": ["2"]
+"2016-02": ["2"],
+"2016-03": ["3"]
 },
 "category": [
 {
 "index"   : "0",
-"title"   : "【jQuery】中，animate、slide、fade等动画的连续触发及滞后反复执行的bug",
-"path"    : "res/papers/content/content001.json",
+"title"   : "【jQuery】animate、slide、fade等动画的连续触发及滞后反复执行的bug",
 "date"    : "2016-01-09",
 "tag"     : "jquery",
 "others"  : "",
@@ -22,8 +22,7 @@
 },
 {
 "index"   : "1",
-"title"   : "【bootstrap】中，tooltip在触发元素remove后的小bug",
-"path"    : "res/papers/content/content002.json",
+"title"   : "【bootstrap】tooltip在触发元素remove后的小bug",
 "date"    : "2016-01-15",
 "tag"     : "bootstrap",
 "others"  : "tooltip",
@@ -32,11 +31,18 @@
 {
 "index"   : "2",
 "title"   : "【json】读取本地json时，无法读取到的bug时，自己踩的一些坑",
-"path"    : "res/papers/content/content003.json",
 "date"    : "2016-02-10",
 "tag"     : "json",
 "others"  : "",
 "abstract": "之前自己做了个小东西，反正就是中间有一部要读取本地的json文件，然后就需要自己写一个自定义json文件用作测试，然后就碰到了一个小坑，发现读取失败（也就是读取成功后的回调函数没有执行）。另外，读取json文件用的是jquery提供的getJSON()方法。"
+},
+{
+"index"   : "3",
+"title"   : "【javascript】新增DOM节点无法监听事件，以及对于事件托管的个人感受",
+"date"    : "2016-03-20",
+"tag"     : "javascript",
+"others"  : "事件托管",
+"abstract": ""
 }
 ]
 }

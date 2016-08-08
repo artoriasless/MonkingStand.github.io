@@ -124,10 +124,17 @@ var papers = {
 		console.info('目录显示采用分页！TODO')
 	},
 	renderPaper: function(index) {
-		/* 根据指定的文章索引，渲染对应的文章内容 */
+		/* 根据指定的文章索引，渲染对应的文章内容,路径path结合index自动生成 */
+		/* path:"res/papers/content/contentxxx.json" */
 		hideContent('#paperContent');
+		var number = '',
+			path   = 'res/papers/content/content';
 
-		$.getJSON(category[index].path, function(data) {
+		if (parseInt(index) < 10) { number = '00' + index; }
+		else if (10 <= parseInt(index) && parseInt(index) < 100) { number = '0' + index; }
+		path += (number + '.json');
+		
+		$.getJSON(path, function(data) {
 			var title   = data.title,
 				date    = data.date,
 				tag     = data.tag,
