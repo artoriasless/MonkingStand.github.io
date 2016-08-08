@@ -6,12 +6,12 @@
 	font-family: consola;
 	src: url(../fonts/Consolas/consola.ttf);
 }
-* { font-family: "Microsoft YaHei", 微软雅黑, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu; }
 /*=========================
 	common markup、custom class style
   =========================*/
 *, *:hover, *:link, *:visited, *:active,
 a, a:hover, a:link, a:visited, a:active {
+	font-family: "Microsoft YaHei", 微软雅黑, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;
 	color: #707070;
 	text-decoration: none;
 }

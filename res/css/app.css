@@ -126,7 +126,7 @@ body {
 /* tagList */
 #tagList dd .tag-name {
 	display: inline-block;
-	width: 4.5em;
+	width: 5em;
 }
 /* latestList */
 #latestList a {
