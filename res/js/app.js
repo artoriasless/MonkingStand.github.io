@@ -79,7 +79,7 @@ var papers = {
 		indexStr += '0';
 		papers.renderCategory(indexStr);
 
-		$('#bodyContainer').addClass('category');
+		$('#bodyContainer').addClass('init category');
 	},
 	renderCategory: function(indexStr) {
 		/* 根据标签、时间轴，渲染显示对应类别下的文章目录 */
@@ -97,8 +97,13 @@ var papers = {
 			indexCount  = indexArr.length,
 			categoryStr = '';
 		
-		if (indexCount != category.length) { $('#bodyContainer').removeClass('init'); }
-		else { $('#bodyContainer').addClass('init'); }
+		if (indexCount != category.length) {
+			$('#bodyContainer').removeClass('init');
+		}
+		else {
+			$('#bodyContainer').addClass('init');
+		}
+
 		for (var i = 0; i < indexCount; i ++) {
 			var tempObj = category[indexArr[i]],
 				tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
@@ -149,7 +154,7 @@ var papers = {
 				preIndex  = (index == maxIndex) ? '-1' : (parseInt(index) + 1),
 				nextIndex = (index == 0) ? '-1' : (parseInt(index) - 1);
 
-			$('#bodyContainer').removeClass('category');
+			$('#bodyContainer').removeClass('category init');
 			$('#paperContent .paper-title h1').empty().text(title);
 			$('#paperContent .paper-subtitle .date-val').text(date);
 			$('#paperContent .paper-subtitle .tags-val').text(tag);
