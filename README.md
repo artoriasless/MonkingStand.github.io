@@ -37,3 +37,5 @@ PS：感觉还是***github desktop***这个工具比较方便。
 
 ##【更新、修改记录】  ##
 2016-08-08　移除目录文件***category.json***中，每篇博文的***path***属性，修改每篇博文的文件名，***contentxxx.json***的编号xxx和索引值在数值上一样。
+
+2016-08-08　另外，关于博客内容编辑、上传，之前没想到，今天用visual code的时候突然想起来，vs code内置了git命令行这一类东西，就是可以先用vs code打开整个项目，然后修改完了之后，直接在vs code里面进行commit和push。
