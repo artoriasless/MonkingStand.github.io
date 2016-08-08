@@ -8,8 +8,7 @@ about category
 format of paper content
 小标题   —— <strong></strong>
 章节标题 —— <p class="sub-chapter"></p>
-正文内容 —— <p></p>                        
-引用内容 —— <div class="refer-content"></div>
+正文内容 —— <p></p>
 图片div  —— <div class="img-container"></div>
               <div><img scr=""></div>                   
 代码div  —— <div class="code-container"></div>

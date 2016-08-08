@@ -7,7 +7,7 @@
 "<strong>【Preface】</strong>",
 "<p>现在页面中有个div，这个div右上角（或者其他位置）有个 × 的图标（这个图标添加tooltip工具提示），光标移到这个图标时，触发tooltip，提示“点击移除”这样类似的字样，然后点击后，把这个div作remove()这样的删除操作。</p>",
 "<p>然后，问题来了，因为这个div被remove()了，导致生成的tooltip对应的 × 图标也被remove()，因为找不到，所以对应的mouseout（可能是mouseleave事件，参考了一下bootstrap的源码，没找出头绪，猜测是这两个的其中一个）事件就没法触发，导致tooltip工具提示一直在那里，出bug了。</p>",
-"<br><strong>【Main body】</strong>",
+"<br><strong>【Main Body】</strong>",
 "<p>文字不多讲，先附代码（bootstrap、jquery的引入就不写了，节省篇幅）：</p>",
 "<div class=\"code-container\"><code>",
 "<xmp><div style=\"width:70%;margin:50px auto;height:300px;\"></xmp>",
