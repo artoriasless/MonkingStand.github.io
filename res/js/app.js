@@ -84,6 +84,8 @@ var papers = {
 	renderCategory: function(indexStr) {
 		/* 根据标签、时间轴，渲染显示对应类别下的文章目录 */
 		/* 传过来的indexStr已经按照时间远近，从最近到最早进行了排序 */
+		/* 设置滚动条滚到顶部，即复位 */
+		window.scrollTo(0, 0);
 		$('#bodyContainer').addClass('category');
 
 		if (indexStr == '-1') {
@@ -129,8 +131,6 @@ var papers = {
 		hideContent('#paperContent')
 		$('#paperContent .paper-title h1').empty().text('Directory');
 		$('#paperContent .paper-content').removeClass('no-item').empty().append(categoryStr);
-		/* 设置滚动条滚到顶部，即复位 */
-		$('body').scrollTop = 0;
 		showContent('#paperContent');
 		//TODO
 		console.info('目录显示采用分页！TODO')
@@ -195,7 +195,7 @@ var papers = {
 			else { $('#nextPaper').text('已经是最后一篇了！没有下一篇了！').removeAttr('onclick'); }
 
 			/* 设置滚动条滚到顶部，即复位 */
-			$('body').scrollTop = 0;
+			window.scrollTo(0, 0);
 			showContent('#paperContent');
 	    })
 	}
