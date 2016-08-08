@@ -17,7 +17,7 @@ var papers = {
 	},
 	initTags: function(tags) {
 		/* 初始化“我的标签”，统计对应标签的的篇数 */
-		// <dd><a><span class="tag-name">html&css</span>(<span class="tag-count">--</span>)</a></dd>
+		/* <dd><a><span class="tag-name">html&css</span>(<span class="tag-count">--</span>)</a></dd> */
 		var i = 0,
 			tagsStr   = '',
 			tagsCount = tags.length;
