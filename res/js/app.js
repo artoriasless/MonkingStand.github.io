@@ -112,7 +112,7 @@ var papers = {
 											'<i class="fa fa-calendar"></i>&nbsp;<span class="date-val">' + tempObj.date + '</span>' + 
 										'</span>' +
 										'<span class="subtitle-tags">' + 
-											'<i class="fa fa-tag"></i>&nbsp;<span class="tags-val">' + tags + '</span>' + 
+											'<i class="fa fa-tags"></i>&nbsp;<span class="tags-val">' + tags + '</span>' + 
 										'</span>' +
 									'</h3>' +
 								'</div>' +
