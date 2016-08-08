@@ -97,9 +97,8 @@ var papers = {
 			indexCount  = indexArr.length,
 			categoryStr = '';
 		
-		if (indexCount != category.length) {
-			$('#bodyContainer').removeClass('category');
-		}
+		if (indexCount != category.length) { $('#bodyContainer').removeClass('init'); }
+		else { $('#bodyContainer').addClass('init'); }
 		for (var i = 0; i < indexCount; i ++) {
 			var tempObj = category[indexArr[i]],
 				tags    = tempObj.tag + (tempObj.others ? ('，' + tempObj.others) : '');
