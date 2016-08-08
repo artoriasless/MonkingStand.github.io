@@ -129,6 +129,8 @@ var papers = {
 		hideContent('#paperContent')
 		$('#paperContent .paper-title h1').empty().text('Directory');
 		$('#paperContent .paper-content').removeClass('no-item').empty().append(categoryStr);
+		/* 设置滚动条滚到顶部，即复位 */
+		$('body').scrollTop = 0;
 		showContent('#paperContent');
 		//TODO
 		console.info('目录显示采用分页！TODO')
