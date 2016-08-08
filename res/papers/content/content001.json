@@ -31,7 +31,7 @@
 "<div class=\"code-container\"><code>",
 "<xmp>$('.tooltip.fade.top.in').remove();</xmp>",
 "</code></div>",
-"<div class=\"img-container size-md\"><img src=\"res/papers/img/002-01.jpg\"></div>",
+"<div class=\"img-container size-md\"><img src=\"res/papers/img/001-01.jpg\"></div>",
 "<p>光标移开后，再聚焦到对应的×图标上，对比一下id，发现id变了。</p>",
 "<p>这里，顺便说一下，原本我是打算去看bootstrap的源码，看看他在tooltip这块的源码怎么写的，好从根源上解决问题。后来看了一部分后，放弃了，对我现在的半吊子水平来说，压力有点大。</p>",
 "<p>但是至少从这个来说，生成的tooltip，id是随机的，而且tooltip的隐藏，并不是\"display:none\"的隐藏，应该是类似\"remove()\"的隐藏。</p>",

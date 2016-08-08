@@ -25,7 +25,7 @@ var papers = {
 		for (var key in tags) {
 			var tempTag   = tags[key],
 				tempCount = tempTag.length,
-				indexStr  = (tempCount != 0) ? tempTag.join('') : '-1';
+				indexStr  = (tempCount != 0) ? tempTag.join(',') : '-1';
 
 			tagsStr +=	'<dd><a onclick="papers.renderCategory(\'' + indexStr + '\')">' +
 							'<span class="tag-name">' + key + '</span>(<span class="tag-count">' + tempCount + '</span>)' +
