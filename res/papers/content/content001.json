@@ -4,7 +4,7 @@
 "date" : "2016-01-09",
 "tag"  : "jquery",
 "content": [
-"<strong>【xmpface】</strong>",
+"<strong>【Preface】</strong>",
 "<p>因为最近要做个操作选项的呼出，然后就想到了用默认隐藏，鼠标划过的时候显示的方法。</p>",
 "<p>刚开始打算添加一个class=\"active\"，直接触发mouseover（或者mouseenter）的时候add，mouseout（或者mouseleave）的时候remove，这个解决方法很简单，也很实用，但是体验上可能不是那么酷炫，即没有动画的中间过渡过程，所以就想到了用animate或者slide这些jQuery的动画，然后一开始讲真，这个插件自己写，会碰到些问题，不太好实现（毕竟js掌握的不是很到位），然后听同事讲去找找jquery，导入后直接引用就可以了。</p>",
 "<br><strong>【Main body】</strong>",
@@ -52,7 +52,7 @@
 "<xmp>//  语法结构</xmp>",
 "<xmp>$('#div').stop();//停止当前动画，继续下一个动画</xmp>",
 "<xmp>$('#div').stop(true);//清除元素的所有动画</xmp>",
-"<xmp>$('#div'').stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画</xmp>",
+"<xmp>$('#div').stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画</xmp>",
 "<xmp>$('#div').stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态</xmp>",
 "</code></div>",
 "<p>这个方案的思路，就是简单的：当我mouseover的时候，触发对应的动画，但是在动画还未结束的时候，我却要mouseleave，同时触发mouseleave对应的动画，这个时候我便需要停止对应元素正在进行的动画。然后，这个bug也就不存在了</p>",

@@ -4,7 +4,7 @@
 "date" : "2016-02-10",
 "tag"  : "json",
 "content": [
-"<strong>【xmpface】</strong>",
+"<strong>【Preface】</strong>",
 "<p>最近做一个小东西，然后中间有一部要读取本地的json文件，就需要自定义一个json文件用作测试，然后就碰到了一个小坑，发现读取失败（也就是读取成功后的回调函数没有执行）。另外，读取json文件用的是jquery提供的getJSON()方法。</p>",
 "<p>另外有一个问题要提前说一下，本地读取json文件，chrome会读取失败（可能是我有些参数没设对，反正后来也没有去折腾），所以下面的测试，建议在FireFox下进行。</p>",
 "<br><strong>【Main Body】</strong>",

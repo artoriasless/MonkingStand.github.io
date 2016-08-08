@@ -31,7 +31,7 @@ i.fa-qq       { color: #24202b; }
 	color: #a94442;
 }
 .no-item:after {
-	content: "暂无内容";
+	content: "此标签下暂无内容";
 	display: block;
 	margin: 15px 0;
 	text-align: center;
