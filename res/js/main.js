@@ -16,7 +16,7 @@ $('a[data-toggle="tooltip"]').bind('click', function() {
 })
 
 $('#blogLink').on('click', function() {
-	if (!$('#bodyContainer').hasClass('init')) {
+	if (!$('#bodyContainer').hasClass('category')) {
 		papers.initCategory(category);
 	}
 })
