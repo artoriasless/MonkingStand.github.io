@@ -232,3 +232,52 @@ body {
 	border-left: 5px solid #888888;
 }
 /* content-body END */
+@keyframes scroll-hover {
+	0% { opacity: 0.25; }
+	100% { opacity: 0.5; }
+}
+@-o-keyframes scroll-hover {
+	0% { opacity: 0.25; }
+	100% { opacity: 0.5; }
+}
+@-ms-keyframes scroll-hover {
+	0% { opacity: 0.25; }
+	100% { opacity: 0.5; }
+}
+@-moz-keyframes scroll-hover {
+	0% { opacity: 0.25; }
+	100% { opacity: 0.5; }
+}
+@-webkit-keyframes scroll-hover {
+	0% { opacity: 0.25; }
+	100% { opacity: 0.5; }
+}
+#scrollBtn {
+	position: fixed;
+	display: block;
+	width: 50px;
+	height: 50px;
+	bottom: 50px;
+	right: 50px;
+	z-index: 999;
+	opacity: 0.25;
+}
+#scrollBtn:hover {
+	animation-name: scroll-hover;
+	-o-animation-name: scroll-hover;
+	-ms-animation-name: scroll-hover;
+	-moz-animation-name: scroll-hover;
+	-webkit-animation-name: scroll-hover;
+
+	animation-duration: 0.5s;
+	-o-animation-duration: 0.5s;
+	-ms-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+
+	animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+}
