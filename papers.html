@@ -21,6 +21,7 @@
     </head>
 
     <body>
+        <div id="topAnchor"></div>
         <nav class="nav-container">
             <div class="nav-content">
                 <div class="nav-header pull-left">
@@ -54,7 +55,7 @@
         </nav>
         <div class="mask-container"></div>
         <div id="loading" class="loading">Loading</div>
-        <div id="scrollBtn" onclick="window.scrollTo(0, 0)"><img src="res/img/scroll-bg.png"></div>
+        <div id="scrollBtn" onclick="$('#topAnchor').HoverTreeScroll(750);"><img src="res/img/scroll-bg.png"></div>
         
         <div id="bodyContainer" class="body-container hidden category init">
             <!-- class="category"，区别【全部文章title】和【某一类别下文章title或某一篇具体文章】 -->
@@ -166,7 +167,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
-                        <h4 class="modal-title" id="contactModalLabel">About</h4>
+                        <h4 class="modal-title" id="aboutModalLabel">About</h4>
                     </div>
 
                     <div class="modal-body">
@@ -235,6 +236,8 @@
         <script type="text/javascript" src="plugins/roundabout/jquery.roundabout2.js"></script>
         <script type="text/javascript" src="plugins/roundabout/jquery.roundabout-shapes2.js"></script>
         <script type="text/javascript" src="plugins/roundabout/jquery.easing.js"></script>
+        <!-- scrolltree plugin -->
+        <script type="text/javascript" src="plugins/scrolltree/hoverTreeScroll.js"></script>
         <!-- sys js -->
         <script type="text/javascript" src="res/js/app.js"></script>
         <!-- main js -->

@@ -17,6 +17,7 @@ body {
 	-moz-background-attachment: fixed;
 	-webkit-background-attachment: fixed;
 }
+#topAnchor { height: 0; }
 /*=========================
 	nav
   =========================*/
