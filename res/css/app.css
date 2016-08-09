@@ -2,20 +2,11 @@
 body {
 	min-width: 1170px;
 	min-height: 500px;
-	background: url(../img/paper-bg.jpg) no-repeat;
-	background-position: center center;
-
-	background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-
-	background-attachment: fixed;
-	-o-background-attachment: fixed;
-	-ms-background-attachment: fixed;
-	-moz-background-attachment: fixed;
-	-webkit-background-attachment: fixed;
+	background: url(../img/paper-bg.jpg) no-repeat fixed center center/cover;
+	-o-background: url(../img/paper-bg.jpg) no-repeat fixed center center/cover;
+	-ms-background: url(../img/paper-bg.jpg) no-repeat fixed center center/cover;
+	-moz-background: url(../img/paper-bg.jpg) no-repeat fixed center center/cover;
+	-webkit-background: url(../img/paper-bg.jpg) no-repeat fixed center center/cover;
 }
 #topAnchor { height: 0; }
 /*=========================
@@ -172,23 +163,11 @@ body {
 }
 #tagList dd a:hover, 
 #timeList dd a:hover {
-	animation-name: move-animate;
-	-o-animation-name: move-animate;
-	-ms-animation-name: move-animate;
-	-moz-animation-name: move-animate;
-	-webkit-animation-name: move-animate;
-
-	animation-duration: 0.5s;
-	-o-animation-duration: 0.5s;
-	-ms-animation-duration: 0.5s;
-	-moz-animation-duration: 0.5s;
-	-webkit-animation-duration: 0.5s;
-
-	animation-timing-function: ease;
-	-o-animation-timing-function: ease;
-	-ms-animation-timing-function: ease;
-	-moz-animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
+	animation: move-animate 0.5s ease;
+	-o-animation: move-animate 0.5s ease;
+	-ms-animation: move-animate 0.5s ease;
+	-moz-animation: move-animate 0.5s ease;
+	-webkit-animation: move-animate 0.5s ease;
 	padding-left: 15px;
 }
 #tagList dd a:hover:before, 
@@ -235,23 +214,28 @@ body {
 /* content-body END */
 @keyframes scroll-hover {
 	0% { opacity: 0.25; }
-	100% { opacity: 0.5; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.25; }
 }
 @-o-keyframes scroll-hover {
 	0% { opacity: 0.25; }
-	100% { opacity: 0.5; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.25; }
 }
 @-ms-keyframes scroll-hover {
 	0% { opacity: 0.25; }
-	100% { opacity: 0.5; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.25; }
 }
 @-moz-keyframes scroll-hover {
 	0% { opacity: 0.25; }
-	100% { opacity: 0.5; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.25; }
 }
 @-webkit-keyframes scroll-hover {
 	0% { opacity: 0.25; }
-	100% { opacity: 0.5; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.25; }
 }
 #scrollBtn {
 	position: fixed;
@@ -264,21 +248,9 @@ body {
 	opacity: 0.25;
 }
 #scrollBtn:hover {
-	animation-name: scroll-hover;
-	-o-animation-name: scroll-hover;
-	-ms-animation-name: scroll-hover;
-	-moz-animation-name: scroll-hover;
-	-webkit-animation-name: scroll-hover;
-
-	animation-duration: 0.5s;
-	-o-animation-duration: 0.5s;
-	-ms-animation-duration: 0.5s;
-	-moz-animation-duration: 0.5s;
-	-webkit-animation-duration: 0.5s;
-
-	animation-timing-function: ease;
-	-o-animation-timing-function: ease;
-	-ms-animation-timing-function: ease;
-	-moz-animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
+	animation: scroll-hover 1.5s infinite;
+	-o-animation: scroll-hover 1.5s infinite;
+	-ms-animation: scroll-hover 1.5s infinite;
+	-moz-animation: scroll-hover 1.5s infinite;
+	-webkit-animation: scroll-hover 1.5s infinite;
 }

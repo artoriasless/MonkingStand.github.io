@@ -82,23 +82,11 @@ i.fa-qq       { color: #24202b; }
 	100% {opacity: 1; }
 }
 .fade-in-animate {
-	animation-name: fade-in;
-	-o-animation-name: fade-in;
-	-ms-animation-name: fade-in;
-	-moz-animation-name: fade-in;
-	-webkit-animation-name: fade-in;
-
-	animation-duration: 2s;
-	-o-animation-duration: 2s;
-	-ms-animation-duration: 2s;
-	-moz-animation-duration: 2s;
-	-webkit-animation-duration: 2s;
-
-	animation-timing-function: ease;
-	-o-animation-timing-function: ease;
-	-ms-animation-timing-function: ease;
-	-moz-animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
+	animation: fade-in 2s ease;
+	-o-animation: fade-in 2s ease;
+	-ms-animation: fade-in 2s ease;
+	-moz-animation: fade-in 2s ease;
+	-webkit-animation: fade-in 2s ease;
 }
 
 /*=========================
