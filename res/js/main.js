@@ -1,3 +1,5 @@
+'use strict'
+
 console.log('Thx for visiting my blog!');
 
 /* init papers.html */

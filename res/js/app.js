@@ -1,3 +1,5 @@
+'use strict'
+
 var papers = {
 	init: function(){
 		$.getJSON('res/papers/category.json', function(data) {
